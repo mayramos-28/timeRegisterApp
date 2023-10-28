@@ -1,0 +1,73 @@
+<div class="row m-0 p-0 ">
+    <div class="col-3 m-0 p-0">
+        <app-asidenavbar></app-asidenavbar>
+    </div>
+
+    <div class="col-9 container">
+        <h3 class="text-center">Completa tu perfil</h3>
+
+        <form class="row g-3 m-0 p-0 col-8 d-flex " [formGroup]="formProfile">
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+            <div class="col-md-6">
+                <label for="pass" class="form-label">Password</label>
+                <input type="pass" class="form-control" id="pass" formControlName="pass">
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="1234 Main St"
+                    formControlName="address">
+            </div>
+
+          
+            <div class="col-md-8">
+                <label for="city" class="form-label">City</label>
+                <select id="city" class="form-select" formControlName="city">
+                    <option selected>Choose...</option>
+                    <option value="valencia">Valencia</option>
+                    <option value="castellon">Castellon</option>
+                    <option value="alicante">Alicante</option>
+               
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" formControlName="zip">
+            </div>
+
+            <div class="col-md-6">
+                <label for="birth" class="form-label">BirhDay</label>
+                <input type="date" class="form-control" id="birth" formControlName="birth">
+            </div>
+            <div class="col-md-2">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age" formControlName="age">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck" >
+                        Check me out
+                    </label>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+<!-- 
+            <p>{{formProfile.value |json}}</p>
+            <p>valid : {{formProfile.valid}}</p>
+            <p>{{ formProfile.get('city')?.errors | json}}</p>
+            <p>{{ formProfile.get('zip')?.errors | json}}</p>
+            <p>{{ formProfile.get('age')?.errors | json}}</p>
+            <p>{{ formProfile.get('birth')?.errors | json}}</p>
+            <p>{{ formProfile.get('email')?.errors | json}}</p>
+            <p>{{ formProfile.get('pass')?.errors | json}}</p>
+            <p>{{ formProfile.get('state')?.errors | json}}</p> -->
+        </form>
+    </div>
+
+
+</div>
