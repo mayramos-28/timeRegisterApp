@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AsidenavbarComponent } from './components/asidenavbar/asidenavbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     ProfileComponent,
     NavbarComponent,
-    AsidenavbarComponent
+    AsidenavbarComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
