@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+import { ProjectComponent } from './components/project/project.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'home', pathMatch:'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path: 'dashboard', component: DashboardComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
   {path: 'profile', component: ProfileComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path: 'project/:id', component: ProjectComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
   {path:'**', redirectTo: '/home', pathMatch: 'full'}
 ];
 

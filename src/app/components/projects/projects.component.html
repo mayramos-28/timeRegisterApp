@@ -54,11 +54,12 @@
     </div>
     <div *ngFor="let project of projects " class="col-3 d-flex gap-2 mt-1">
         <div class="card" style="width: 18rem; ">
-            <img src={{project.image}} class="card-img-top" alt>
+            <img src="https://picsum.photos/400/300" class="card-img-top" alt>
             <div class="card-body">
                 <h5 class="card-title">{{project.name}}</h5>
                 <p class="card-text">{{project.description}}</p>
-                <a href="#" class="btn btn-primary ">see project</a>
+                <a href="#" class="btn btn-primary " routerLink="/project/{{project.id}}">see project</a>
+                <button class="btn btn-primary " (click)="delete(project.id)">delete</button>
             </div>
         </div>
 
@@ -67,3 +68,4 @@
 </div>
 
 <br>
+router-outlet

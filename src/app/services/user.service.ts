@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, User } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, user } from '@angular/fire/auth';
 
 
 @Injectable({
@@ -27,6 +27,10 @@ export class UserService {
 
   logout() {
     return signOut(this.auth);
+  }
+  getUserId() {
+    const userId =user(this.auth).subscribe(user => console.log('user', user?.uid))
+    return userId
   }
 
 }
