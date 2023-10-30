@@ -11,7 +11,7 @@ export class ProjectsService {
 
   constructor(
     private firestore: Firestore,
-    private userService : UserService
+
   ) { }
 
   addProjects(project: Project) {
@@ -33,6 +33,10 @@ export class ProjectsService {
     const projectDocRef = doc(this.firestore, `projects/${id}`);
 
     return getDoc(projectDocRef);
+  }
+  updateProject(id: string, project: Project) {
+    const projectDocRef = doc(this.firestore, `projects/${id}`);
+    return projectDocRef;
   }
 
 }

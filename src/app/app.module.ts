@@ -16,6 +16,9 @@ import { AsidenavbarComponent } from './components/asidenavbar/asidenavbar.compo
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectComponent } from './components/project/project.component';
+import { TimeRegisterComponent } from './components/time-register/time-register.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ProjectComponent } from './components/project/project.component';
     NavbarComponent,
     AsidenavbarComponent,
     ProjectsComponent,
-    ProjectComponent
+    ProjectComponent,
+    TimeRegisterComponent,
+    TasksComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EMPTY, Observable } from 'rxjs';
 import { Project } from 'src/app/interfaces/proyectsInterface';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { UserService } from 'src/app/services/user.service';
@@ -13,6 +14,7 @@ export class ProjectComponent implements OnInit {
 
   projectId: string | null = null;
   project: Project | undefined;
+  userId: string | null = null
   constructor(
     private _projectService: ProjectsService,
     private route: ActivatedRoute,
@@ -38,10 +40,11 @@ export class ProjectComponent implements OnInit {
     });
   }
 
-  getUser() {
-    console.log('getUser', this.userService.getUserId())
-    //console.log('getUser', this.userService.getTonken().subscribe(user => console.log('user', user?.uid)));
+
+  async deleteClick(id: any ){
+    const idString = id.toString();
+    console.log('delete id', id);
+    const res = this._projectService.deleteProject(idString);
+    console.log('delete', res);
   }
-
-
 }
