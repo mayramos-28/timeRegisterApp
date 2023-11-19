@@ -1,11 +1,12 @@
+
 <div class="row">
-    <h1> My Projects</h1>
+    <h1> Mis proyectos</h1>
     <div class="col-12">
 
         <div>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            <button type="button" class="btn button-gradiente button-gradiente-hover" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 data-bs-whatever="@mdo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#0d5154"
                     class="bi bi-folder-plus" viewBox="0 0 16 16">
                     <path
                         d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
@@ -52,13 +53,18 @@
         <!-- Pintar proyectos -->
 
     </div>
-    <div *ngFor="let project of projects " class="col-3 d-flex gap-2 mt-1">
+    <div *ngFor="let project of projects " class="col-12 col-sm-12 col-md-3 d-flex gap-2 mt-1">
         <div class="card" style="width: 18rem; ">
             <img src="https://picsum.photos/400/300" class="card-img-top" alt>
             <div class="card-body">
                 <h5 class="card-title">{{project.name}}</h5>
                 <p class="card-text">{{project.description}}</p>
-                <a href="#" class="btn btn-primary " routerLink="/project/{{project.id}}">see project</a>
+                <a href="#" class="btn button-gradiente button-gradiente-hover " routerLink="/project/{{project.id}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                      </svg>
+                </a>
              
             </div>
         </div>
@@ -67,4 +73,4 @@
     </div>
 </div>
 
-<br>
+

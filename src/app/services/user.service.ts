@@ -30,10 +30,17 @@ export class UserService {
     return signOut(this.auth);
   }
   getUserId() {
+   
     return user(this.auth).pipe(
       map(user => user?.uid)
     );
+
   }
   
+  isUserLogged(): Observable<boolean> {
+    return user(this.auth).pipe(
+      map(user => user !== null)
+    );
+  }
 
 }

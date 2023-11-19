@@ -1,22 +1,57 @@
-
-   
-        <!-- Menú lateral (1/8 de la página) -->
-        <div class=" bg-dark text-light sidebar">
-
-
+<div class="sidebar">
+    <div class=" bg-dark text-light sidebar-large d-none d-md-block">
+        <ul class="nav flex-column fs-4">
+            <li class="nav-item">
+                <a class="nav-link active" routerLink="/profile">Perfil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard">Proyectos</a>
+            </li>
             
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" routerLink="/profile">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Opción 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Opción 3</a>
-                </li>
-            </ul>
+        </ul>
+    </div>
+    <div class="d-md-none sidebar-small-btn ">
+        <p>
+            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+                aria-expanded="false" aria-controls="collapseWidthExample">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#009ea1" class="bi bi-plus-circle"
+                    viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                </svg>
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal sidebar-small  " id="collapseWidthExample">
+                <ul class="nav flex-column fs-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="/profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="proyects">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-folder-plus" viewBox="0 0 16 16">
+                                <path
+                                    d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
+                                <path
+                                    d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z" />
+                            </svg>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
+    </div>
+</div>
 
 
 <router-outlet></router-outlet>

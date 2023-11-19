@@ -10,13 +10,32 @@ $bright-turquoise-800: #096266;
 $bright-turquoise-900: #0d5154;
 $bright-turquoise-950: #002e33;
 
-
-
-.sidebar {
-    height: 100vh; /* 100% del alto de la ventana */
-    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
-    color:$bright-turquoise-100 ;
+.sidebar{
+    position: relative;
+    transition: all 0.5s ;
 }
-a{
-    color:$bright-turquoise-100 ;
+
+.sidebar-large {
+    height: 100vh;
+    /* 100% del alto de la ventana */
+    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+    color: $bright-turquoise-100 ;
+}
+.sidebar-small-btn{
+    position: fixed;
+    width: 4rem;
+   
+}
+.sidebar-small{
+   
+    /* 100% del alto de la ventana */
+    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+    color: $bright-turquoise-100 ;
+    width: 4rem;
+    z-index: 1000;
+  
+
+}
+a {
+    color: $bright-turquoise-100 ;
 }

@@ -7,15 +7,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { canActivate, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import { ProjectComponent } from './components/project/project.component';
+import { TaskComponent } from './components/task/task.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'home', pathMatch:'full'},
-  {path: 'home', component: MainComponent},
+  {path:'', redirectTo:'dashboard', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path: 'dashboard', component: DashboardComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
-  {path: 'profile', component: ProfileComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
-  {path: 'project/:id', component: ProjectComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path:'dashboard', component: DashboardComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path:'profile', component: ProfileComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path:'projects', component: ProjectComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path:'project/:id', component: ProjectComponent, ...canActivate( () => redirectUnauthorizedTo('/login'))},
+  {path:'tasks', component: TaskComponent},
   {path:'**', redirectTo: '/home', pathMatch: 'full'}
 ];
 

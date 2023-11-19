@@ -1,9 +1,9 @@
-export interface Project{
+export interface Project {
     id?: string;
     user: string;
     name: string;
     description: string;
-    image : string;
+    image: string;
     date: Date;
 }
 
@@ -13,10 +13,10 @@ export interface Task {
     projectId: string;
     description: string;
     date: Date;
-   
+
 }
 
-export interface subTask{
+export interface subTask {
     id?: string;
     name: string;
     taskId: string;
@@ -26,10 +26,11 @@ export interface subTask{
 
 export interface TimeRegister {
     id?: string;
-    subTaskId: string;
-    date: Date;
-    startTime: Date;
-    stopTime: Date;
+    parentId: string;
+    isTask: boolean;
+    date: string;
+    startTime: string;
+    stopTime: string;
     totalTime: string;
-    
+
 }

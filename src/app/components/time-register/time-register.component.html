@@ -1,18 +1,126 @@
 <p>{{date}}</p>
-<button (click)="run()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill=""
-    class="bi bi-play-circle" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-    <path
-        d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
-</svg></button><br>
+<button (click)="run()" class="btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="" class="bi bi-play-circle"
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+            d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+    </svg></button>
+<span>{{startTime}}</span>
+<br>
+<button (click)="stop()" class="btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="" class="bi bi-stop-circle "
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z" />
+    </svg></button><br>
+<div class="container">
 
-<button (click)="stop()"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill=""
-    class="bi bi-stop-circle " viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-    <path
-        d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3z" />
-</svg></button><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Inicio</th>
+                <th scope="col">Fin</th>
+                <th scope="col">total</th>
 
-<p> start time: {{startTime}}</p>
-<p>Stop time: {{stopTime}}</p>
-<p>Total tome: {{totalTime}}</p>
+            </tr>
+        </thead>
+        <tbody *ngFor="let time of allTimesRegisters">
+            <tr>
+                <th scope="row">#</th>
+                <td>{{time.date }}</td>
+                <td>{{time.startTime}}</td>
+                <td>{{time.stopTime}}</td>
+                <td>{{time.totalTime}}</td>
+                <td>
+                    <button class="btn" (click)="delete(time.id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-trash "
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                            <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                        </svg>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#editTimeRegisterModal"
+                        data-bs-whatever="@mdo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-pencil"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                        </svg>
+                    </button>
+                </td>
+            </tr>
+            <!-- Inicio modal -->
+
+            <div class="modal fade" id="editTimeRegisterModal" tabindex="-1" aria-labelledby="editTimeRegisterModal"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="editTimeRegisterModal">Editar registro de {{time.date}}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Inicio:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Final:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary"> Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fin modal -->
+        </tbody>
+    </table>
+
+
+
+
+
+</div>
+
+
+<!-- <div *ngFor="let time of allTimesRegisters">
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+              
+                <th scope="col">Inicio</th>
+                <th scope="col">Fin</th>
+                <th scope="col">total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">#</th>
+                <td>{{time.startTime}}</td>
+                <td>{{time.stopTime}}</td>
+                <td>{{time.totalTime}}</td>
+              </tr>
+            
+            </tbody>
+          </table>
+      
+
+    </div>
+</div> -->

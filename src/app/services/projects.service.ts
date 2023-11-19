@@ -3,6 +3,8 @@ import { Firestore, collection, addDoc, collectionData, doc, deleteDoc, getDoc }
 import { Project } from '../interfaces/proyectsInterface';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
+import { Auth } from '@angular/fire/auth';
+import { query, where } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,7 @@ export class ProjectsService {
 
   constructor(
     private firestore: Firestore,
+    private auth:Auth
 
   ) { }
 
@@ -21,14 +24,24 @@ export class ProjectsService {
   }
 
   getProjects(): Observable<Project[]> {
+    const user = this.auth.currentUser;
+
+    if (!user) {
+      return new Observable<Project[]>((observer) => {
+        observer.next([]);
+      });
+    }
+
     const projectsRef = collection(this.firestore, 'projects');
-    return collectionData(projectsRef, { idField: 'id' }) as Observable<Project[]>;
+    const userProjectsQuery = query(projectsRef, where('userId', '==', user.uid));
+    return collectionData(userProjectsQuery, { idField: 'id' }) as Observable<Project[]>;
+    // return collectionData(projectsRef, { idField: 'id' }) as Observable<Project[]>;
   }
   deleteProject(id: string) {
     const projectDocRef = doc(this.firestore, `projects/${id}`);
     return deleteDoc(projectDocRef);
 
-  }
+  }ng add @angular/material
   getProject(id: string) {
     const projectDocRef = doc(this.firestore, `projects/${id}`);
 

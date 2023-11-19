@@ -12,13 +12,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProjectComponent implements OnInit {
 
-  projectId: string | null = null;
+  projectId: string = '';
   project: Project | undefined;
   userId: string | null = null
   constructor(
     private _projectService: ProjectsService,
-    private route: ActivatedRoute,
-    private userService: UserService
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +25,7 @@ export class ProjectComponent implements OnInit {
       this.projectId = params['id'];
       this.getProject();
     });
+    console.log('projectID', this.projectId)
   }
 
   getProject() {
@@ -33,9 +33,8 @@ export class ProjectComponent implements OnInit {
       return;
     }
     const doc = this._projectService.getProject(this.projectId);
-    console.log('doc', doc);
-    doc.then((res: any) => {
-      console.log('res', res.data());
+    
+    doc.then((res: any) => {     
       this.project = res.data();
     });
   }
@@ -43,8 +42,6 @@ export class ProjectComponent implements OnInit {
 
   async deleteClick(id: any ){
     const idString = id.toString();
-    console.log('delete id', id);
-    const res = this._projectService.deleteProject(idString);
-    console.log('delete', res);
+   this._projectService.deleteProject(idString);
   }
 }

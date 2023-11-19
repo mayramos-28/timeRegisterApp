@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, query, updateDoc, where } from '@angular/fire/firestore';
 import { Task } from '../interfaces/proyectsInterface';
 import { Observable } from 'rxjs';
 
@@ -16,9 +16,10 @@ export class TasksService {
     const taskRef = collection(this.firestore, 'tasks');
     return addDoc(taskRef, task);
   }
-  getTasks(): Observable<Task[]> {
+  getTasks(projectId:string): Observable<Task[]> {
     const taskRef = collection(this.firestore, 'tasks');
-    return collectionData(taskRef, { idField: 'id' }) as Observable<Task[]>;
+    const taskQuery = query(taskRef, where('projectId', '==', projectId));
+    return collectionData(taskQuery, { idField: 'id' }) as Observable<Task[]>;
   }
   deleteTask(id: string) {
     const taskDocRef = doc(this.firestore, `tasks/${id}`);

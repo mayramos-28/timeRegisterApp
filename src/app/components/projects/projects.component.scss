@@ -1,0 +1,33 @@
+$bright-turquoise-50: #effefd;
+$bright-turquoise-100: #c7fffa;
+$bright-turquoise-200: #90fff6;
+$bright-turquoise-300: #50f8ef;
+$bright-turquoise-400: #3be8e5;
+$bright-turquoise-500: #04c8c8;
+$bright-turquoise-600: #009ea1;
+$bright-turquoise-700: #057c80;
+$bright-turquoise-800: #096266;
+$bright-turquoise-900: #0d5154;
+$bright-turquoise-950: #002e33;
+
+.button-gradiente-hover,
+.button-gradiente {
+    background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
+    border: none; /* Quita el borde */
+    border-radius: 8px; /* Redondea los bordes */
+    margin: 8px; /* Agrega un margen exterior */
+    padding: 10px 20px; /* Ajusta el espaciado interno (padding) según tus necesidades */
+    color: white; /* Cambia el color del texto (opcional) */
+    cursor: pointer; /* Cambia el cursor al pasar por encima (opcional) */
+    text-align: center; /* Centra el texto horizontalmente (opcional) */
+    text-decoration: none; /* Quita la decoración de texto (opcional) */
+}
+
+
+.button-gradiente-hover:hover {
+    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+}
+
+.button-gradiente {
+    background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
+}

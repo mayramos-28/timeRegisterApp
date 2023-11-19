@@ -1,1 +1,13 @@
-<p>task works!</p>
+<div *ngFor="let task of tasks " class="col-3 d-flex gap-2 mt-1">
+    <div class="card" style="width: 18rem; ">
+        <img src="https://picsum.photos/400/300" class="card-img-top" alt>
+        <div class="card-body">
+            <h5 class="card-title">{{task.name}}</h5>
+            <p class="card-text">{{task.description}}</p>
+            <a href="#" class="btn btn-primary " routerLink="/project/{{task.id}}">see Task</a>
+
+        </div>
+    </div>
+
+
+</div>

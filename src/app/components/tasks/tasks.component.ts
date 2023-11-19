@@ -1,43 +1,68 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, SimpleChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Task } from 'src/app/interfaces/proyectsInterface';
 import { TasksService } from 'src/app/services/tasks.service';
+
 
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss']
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit {
 
   @Input() idProject: string | null = null;
-  @Output() idProjectChange = new EventEmitter<string>();
-  tasks:Task[] | undefined;
+  @Input() nameProject: string | undefined;
+
+  tasks: Task[] | undefined;
+  taskId: string = '';
 
   constructor(
     private _formBuilder: FormBuilder,
     private _taskService: TasksService,
 
   ) { }
+  ngOnInit(): void {
+    console.log('idProject', this.idProject)
+    if (this.idProject) {
+      this.changeValue();
+      this._taskService.getTasks(this.idProject).subscribe(tasks => {
+        console.log('tasks', tasks);
+        this.tasks = tasks;
+      });
+    }
+  }
 
   taskForm: FormGroup = this._formBuilder.group({
     name: [''],
-    projectId: [this.idProject],
+    projectId: [],
     description: [''],
     date: [new Date()],
+
 
   });
 
   async addTask() {
-   const r = await this._taskService.addTask(this.taskForm.value);
+    if (!this.idProject) {
+      return;
+    }
+    this.changeValue();
+    const response = await this._taskService.addTask(this.taskForm.value);
+    this.taskId = response.id;
     this.taskForm.reset();
-    console.log('task', r)
+    
   }
+
+
 
   delete(id: any) {
     const idString = id.toString();
     this._taskService.deleteTask(idString);
 
+  }
+  changeValue() {
+    console.log('changeValue', this.idProject)
+    this.taskForm.controls['projectId'].setValue(this.idProject);
   }
 
 

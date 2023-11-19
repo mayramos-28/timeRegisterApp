@@ -1,68 +1,72 @@
-<p>tasks works!</p>
-<div class="row">
-    <h1> My Tasks</h1>
-    <div class="col-12">
-
-        <div>
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                data-bs-whatever="@mdo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
-                    class="bi bi-folder-plus" viewBox="0 0 16 16">
-                    <path
-                        d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z" />
-                    <path
-                        d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Inicio modal -->
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">New Tasks</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form [formGroup]="taskForm">
-                            <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Name:</label>
-                                <input type="text" class="form-control" id="recipient-name" formControlName="name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Description:</label>
-                                <textarea class="form-control" id="message-text"
-                                    formControlName="description"></textarea>
-                            </div>
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" (click)="addTask()"> Create Project</button>
+<div class="container">
+    <p>tasks works!</p>
+    <div class="row">
+        <h1> Tasks del projecto {{nameProject}} </h1>
+        <div class="col-12">
+    
+            <div>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="@mdo"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="35" fill="currentColor" class="bi bi-patch-plus" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+                        <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
+                      </svg>
+                      Crear tarea
+                </button>
+            </div>
+    
+            <!-- Inicio modal -->
+    
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">New Tasks</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="taskForm">
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Name:</label>
+                                    <input type="text" class="form-control" id="recipient-name" formControlName="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Description:</label>
+                                    <textarea class="form-control" id="message-text"
+                                        formControlName="description"></textarea>
+                                </div>
+    
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="addTask()"> Create Project</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- fin modal -->
+            <!-- Pintar proyectos -->
+    
+    
         </div>
-        <!-- fin modal -->
-        <!-- Pintar proyectos -->
-
-    </div>
-    <div *ngFor="let task of tasks " class="col-3 d-flex gap-2 mt-1">
-        <div class="card" style="width: 18rem; ">
-            <img src="https://picsum.photos/400/300" class="card-img-top" alt>
-            <div class="card-body">
-                <h5 class="card-title">{{task.name}}</h5>
-                <p class="card-text">{{task.description}}</p>
-                <a href="#" class="btn btn-primary " routerLink="/project/{{task.id}}">see Task</a>
-
+        <app-task [idTask]="taskId"></app-task>
+        <div *ngFor="let task of tasks " class="col-3 d-flex gap-2 mt-1">
+            <div class="card" style="width: 18rem; ">
+                <img src="https://picsum.photos/400/300" class="card-img-top" alt>
+                <div class="card-body">
+                    <h5 class="card-title">{{task.name}}</h5>
+                    <p class="card-text">{{task.description}}</p>
+                    <a href="#" class="btn btn-primary " routerLink="/project/{{task.id}}">see Task</a>
+                    <button class="btn btn-danger " (click)="delete(task.id)">Delete</button>
+    
+                </div>
             </div>
+    
+    
         </div>
-
-
     </div>
+    
+    <br>
 </div>
-
-<br>
