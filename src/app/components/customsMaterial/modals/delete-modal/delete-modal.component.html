@@ -1,0 +1,25 @@
+
+<div class="delete-modal">
+
+    <div class="modal-container">
+        <header>
+            <div class="header"><span>{{data.header}}</span></div>
+            <h1>{{ data.title }}</h1>
+          
+        </header>
+        <main>
+            
+                <p>Vas a eliminar el registro {{data.rows[0].label}} con el valor {{data.rows[0].value}}?
+                </p>
+             <p>
+                 Estas seguro?
+             </p>
+            
+        </main>
+        <div class="btn-modal">
+            <button mat-raised-button  mat-button mat-dialog-close>Cancelar</button>
+            <button mat-raised-button color="warn" mat-button (click)="confirmDelete()">Confirmar Eliminación</button>
+
+        </div>
+    </div>
+</div>

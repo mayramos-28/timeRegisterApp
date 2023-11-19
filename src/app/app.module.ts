@@ -19,6 +19,12 @@ import { ProjectComponent } from './components/project/project.component';
 import { TimeRegisterComponent } from './components/time-register/time-register.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskComponent } from './components/task/task.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { TableComponent } from './components/customsMaterial/table/table.component';
+import { DetailsModalComponent } from './components/customsMaterial/modals/details-modal/details-modal.component';
+import { DeleteModalComponent } from './components/customsMaterial/modals/delete-modal/delete-modal.component';
+import { UpdateModalComponent } from './components/customsMaterial/modals/update-modal/update-modal.component';
 
 @NgModule({
   declarations: [
@@ -34,15 +40,21 @@ import { TaskComponent } from './components/task/task.component';
     ProjectComponent,
     TimeRegisterComponent,
     TasksComponent,
-    TaskComponent
+    TaskComponent,
+    TableComponent,
+    DetailsModalComponent,
+    DeleteModalComponent,
+    UpdateModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     provideFirebaseApp(() => initializeApp({"projectId":"timeregisterapp-9948b","appId":"1:559565907338:web:70591ae12849a232da5473","storageBucket":"timeregisterapp-9948b.appspot.com","apiKey":"AIzaSyC1oruUWERw5XxaP6jtX_ZeDT1PBpXlhvw","authDomain":"timeregisterapp-9948b.firebaseapp.com","messagingSenderId":"559565907338"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

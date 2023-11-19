@@ -1,0 +1,39 @@
+h2 {
+    margin: 20px;
+
+}
+
+.table-container {
+
+    display: flex;
+    justify-content: center;
+   
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+
+}
+th{
+    background-color: var(--primary) !important;
+    color: var(--accent);
+}
+.edit{
+    color: rgb(62, 137, 203);
+}
+.delete{
+    color: rgb(157, 34, 34);
+}
+
+
+.acciones{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }

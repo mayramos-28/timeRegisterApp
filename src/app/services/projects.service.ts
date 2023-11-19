@@ -41,7 +41,7 @@ export class ProjectsService {
     const projectDocRef = doc(this.firestore, `projects/${id}`);
     return deleteDoc(projectDocRef);
 
-  }ng add @angular/material
+  }
   getProject(id: string) {
     const projectDocRef = doc(this.firestore, `projects/${id}`);
 

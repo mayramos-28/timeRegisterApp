@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, updateDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
 import { TimeRegister } from '../interfaces/proyectsInterface';
 import { Observable } from 'rxjs';
 import { query, where } from 'firebase/firestore';
@@ -32,9 +32,17 @@ export class TimeRegisterService {
     const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);
     return deleteDoc(timeRegisterDocRef);
   }
+  // updateTimeRegister(id: string, timeRegister: TimeRegister){
+   
+  //   const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);
+    
+  //   return  updateDoc(timeRegisterDocRef, {timeRegister});
+  // }
   updateTimeRegister(id: string, timeRegister: TimeRegister){
+   
     const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);
-    return updateDoc(timeRegisterDocRef, {timeRegister});
+    
+    return setDoc(timeRegisterDocRef, {timeRegister}, {merge:true});
   }
 
 

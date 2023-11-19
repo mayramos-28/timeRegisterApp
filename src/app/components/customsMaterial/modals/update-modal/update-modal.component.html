@@ -1,0 +1,33 @@
+<div class="update-container">
+ 
+        <header>
+            <div class="header"><span>{{data.header}}</span></div>
+            <h1>{{ title }}</h1>
+        </header>
+
+        <div class="main-container" mat-dialog-content>
+
+            <form class="example-form" [formGroup]="formRegister">
+
+                <div class="modal-content" *ngFor="let row of data.rows">
+                    <mat-form-field>
+                        <mat-label>{{ row.label }}</mat-label>
+                        <input class="inputs" matInput type="text" formControlName={{row.field}} />
+                    </mat-form-field>
+
+                </div>
+
+
+            </form>
+            <div class="btn-modal">
+                <button mat-raised-button color="basic" mat-button mat-dialog-close>Cerrar</button>
+                <button mat-raised-button color="accent" (click)="confirmUpdate()"> Actualizar </button>
+            </div>
+
+
+
+
+            <div>
+            </div>
+
+    
