@@ -1,41 +1,51 @@
-$bright-turquoise-50: #effefd;
-$bright-turquoise-100: #c7fffa;
-$bright-turquoise-200: #90fff6;
-$bright-turquoise-300: #50f8ef;
-$bright-turquoise-400: #3be8e5;
-$bright-turquoise-500: #04c8c8;
-$bright-turquoise-600: #009ea1;
-$bright-turquoise-700: #057c80;
-$bright-turquoise-800: #096266;
-$bright-turquoise-900: #0d5154;
-$bright-turquoise-950: #002e33;
+@use "./../../sass/colors" as colors;
+@use "./../../sass/gradients" as gradients;
 
-.sidebar{
+.sidebar {
     position: relative;
-    transition: all 0.5s ;
+    transition: all 0.5s;
 }
 
 .sidebar-large {
     height: 100vh;
-    /* 100% del alto de la ventana */
-    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
-    color: $bright-turquoise-100 ;
-}
-.sidebar-small-btn{
-    position: fixed;
-    width: 4rem;
-   
-}
-.sidebar-small{
-   
-    /* 100% del alto de la ventana */
-    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
-    color: $bright-turquoise-100 ;
-    width: 4rem;
-    z-index: 1000;
-  
+    color: colors.$bright-turquoise-100 ;
+    @include gradients.background-gradient;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 
 }
-a {
-    color: $bright-turquoise-100 ;
+
+.sidebar-small-btn {
+    position: fixed;
+    width: 4rem;
+}
+
+.sidebar-small {
+    @include gradients.background-gradient;
+    color: colors.$bright-turquoise-100 ;
+    width: 4rem;
+    z-index: 1000;
+}
+
+.nav-link {
+    cursor: pointer;
+    color: colors.$bright-turquoise-50 ;
+
+
+}
+
+.nav-link--item {
+    color: colors.$bright-turquoise-500 ;
+    cursor: pointer;
+
+}
+
+.nav {
+    font-size: large;
+    padding-top: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
 }

@@ -1,1 +1,19 @@
-<app-navbar></app-navbar>
+<!-- <div class="row app" >
+    <div class="col-2 m-0 p-0 app-aside" *ngIf="sesion">
+        <app-asidenavbar></app-asidenavbar>
+    </div>
+    <div class="col-auto m-0 p-0  ">
+        <router-outlet></router-outlet>
+    </div>
+
+</div> -->
+
+<div class="app" >
+    <div class="app-aside" *ngIf="sesion">
+        <app-asidenavbar></app-asidenavbar>
+    </div>
+    <div class="app-content  ">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

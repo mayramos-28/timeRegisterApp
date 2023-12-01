@@ -1,0 +1,23 @@
+@use "./colors.scss";
+@use "./shadows";
+
+@mixin button-gradient{
+    background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
+    @extend .button-gradient-style;
+    @extend .button-gradiente-hove;
+}
+
+.button-gradiente-hover:hover {
+    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+    @extend .button-gradient-style;
+}
+
+.button-gradient-style{
+    border: none;
+    border-radius: 8px;     
+    padding: 10px 20px;
+    color: white;  
+    cursor: pointer;   
+    text-align: center;   
+    text-decoration: none;
+}

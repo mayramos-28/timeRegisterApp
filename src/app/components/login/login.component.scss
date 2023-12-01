@@ -1,76 +1,100 @@
-$bright-turquoise-50: #effefd;
-$bright-turquoise-100: #c7fffa;
-$bright-turquoise-200: #90fff6;
-$bright-turquoise-300: #50f8ef;
-$bright-turquoise-400: #3be8e5;
-$bright-turquoise-500: #04c8c8;
-$bright-turquoise-600: #009ea1;
-$bright-turquoise-700: #057c80;
-$bright-turquoise-800: #096266;
-$bright-turquoise-900: #0d5154;
-$bright-turquoise-950: #002e33;
+@import './../../sass/colors';
 
-
-.login-portal {
-    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
-    height: 92vh;
-
-}
-
-.a {
-
-    pad: 0;
-    margin: 0;
-    height: 92vh;
+// background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+.container-main {
+    padding: 0px;
+    margin: 0px;
     display: flex;
-    justify-content: center;
-
-
-}
-
-// .container-main{
-//     display: flex;
-//     justify-content: space-around;
-// }
-
-h2 {
-   
-    text-align: center;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:$bright-turquoise-900
-}
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
 
-form {
+    // background-image: url("../../../assets/images/background-images/fondo-acuarela-pastel-abstracto-colorido.jpg");
+    background-image: url("../../../assets/images/background-images/formas-papel-psicodelico-multicolor.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    
  
-    margin: 50px auto;
-    padding: 20px;
+   
+  .container-login{
+    padding: 15px 0px;
+    background: #cf7f0647;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    border-radius: 10px;
-    background: #f9f3f347;
-    box-shadow: 11px 11px 19px #d3d3d3,
-        -11px -11px 19px #ededed;
+    h2 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $bright-turquoise-900;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+
+    form {
+  
+        padding: 15px 0px;      
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        border-radius: 10px;      
+
+
+        .container-inputs {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 1rem;
+       
+        }
+
+    }
 }
+.container-register{
+    color: white;
+    font-size: 1rem;
+
+    a{
+        color: $bright-turquoise-700;
+        font-weight: 700;
+    
+    }
+}
+
+
+
+
+button{
+    font-size: 1.2
+    rem;
+}
+
+
 
 .button-gradiente-hover,
 .button-gradiente {
     background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
-    border: none;
-    /* Quita el borde */
-    border-radius: 8px;
-    /* Redondea los bordes */
-    /* Agrega un margen exterior */
-    padding: 10px 20px;
-    /* Ajusta el espaciado interno (padding) según tus necesidades */
+    border: none;    
+    border-radius: 8px;   
+    padding: 10px 20px; 
     color: white;
-    /* Cambia el color del texto (opcional) */
-    cursor: pointer;
-    /* Cambia el cursor al pasar por encima (opcional) */
+    cursor: pointer; 
     text-align: center;
-    /* Centra el texto horizontalmente (opcional) */
     text-decoration: none;
-    /* Quita la decoración de texto (opcional) */
+
 }
 
 

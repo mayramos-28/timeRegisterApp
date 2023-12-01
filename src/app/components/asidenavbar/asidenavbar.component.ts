@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-asidenavbar',
@@ -6,5 +8,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./asidenavbar.component.scss']
 })
 export class AsidenavbarComponent {
+  isLoggin: boolean = false;
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
+  ngOnInit(): void {
+    this.IsLogged();
+  }
 
+  logout (){
+    console.log(` logging out`);
+    this.userService.logout()
+    .then(() => {
+      localStorage.removeItem('user');
+      this.router.navigate(['/login'])
+    })
+    .catch((error) => console.log(error));
+  }
+  IsLogged(){
+    this.userService.isUserLogged().subscribe((user) => {
+      console.log('user de isLogged', user)
+     this.isLoggin = user;
+     console.log('isLoggin', this.isLoggin)
+    });
+  }
 }

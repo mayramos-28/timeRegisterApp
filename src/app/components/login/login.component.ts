@@ -24,11 +24,16 @@ export class LoginComponent {
   onSubmit() {
     this.userService.login(this.formLogin.value)
     .then( response => {
-      console.log('success login',response)
-      this.router.navigate(['/profil'])
+     
+         localStorage.setItem('user',response.user.uid)
+         this.router.navigate(['/dashboard'])
+         alert('success login')
+
+     
+   
     })
     .catch(
-      err => console.log('error login',err)
+      err => alert('error login')
     )
 
   }
@@ -36,8 +41,12 @@ export class LoginComponent {
   onGoogleSubmit(){
     this.userService.loginWithGoogle()
     .then( response => {
-      console.log('success login',response)
-      this.router.navigate(['/home'])
+      
+      localStorage.setItem('user',response.user.uid)
+      localStorage.setItem('userName',response.user?.displayName || '')
+      this.router.navigate(['/dashboard'])
+      alert('success login')
+
     })
     .catch( err => console.log('error login with google',err))
   }

@@ -1,35 +1,39 @@
-<div class="row container-main m-0 p-0">
-    <div class="col-lg-8 col-md-4 login-portal d-none d-md-block d-lg-block ">
-
-    </div>
-    
-    <div class="container-login col-12 col-lg-4 col-md-8 row ">
+<div class="row container-main row">
+    <div class="container-login row col-12 col-sm-12 col-md-9 col-lg-6 row gy-2 gx-3 ">
         <h2>Login</h2>
-   
-    
-        <form class="row col-8 d-flex justify-content-center" [formGroup]="formLogin">
-            <div class="col-10 ">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" formControlName="email">
+
+        <form class="row col-12 col-sm-12 col-md-9 col-lg-6  row gy-2 gx-3 " [formGroup]="formLogin">
+            <div class="container-inputs">
+                <div class="col-12 ">
+                    <input type="email" class="form-control form-control-lg" id="email" placeholder="✉ Email "
+                        formControlName="email">
+
+
+
+                </div>
+                <div class="col-12">
+                    <input type="password" class="form-control form-control-lg" id="password"
+                        placeholder="&#128274; Password" formControlName="password">
+                </div>
             </div>
-            <div class="col-10 ">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" formControlName="password">
-            </div>
-            <div>
-                <p class="text-center">No estas registrada?
-                    <a routerLink="/register">Registrate!</a> </p>
-            </div>
-    
             <div class="col-12 text-center">
-                <button type="submit" class="button-gradiente button-gradiente-hover" (click)="onSubmit()">Login in</button>
+                <button type="submit" class="button-gradiente button-gradiente-hover" (click)="onSubmit()">Login
+                   </button>
             </div>
         </form>
-    
-        <div class="col-12 text-center">
-            <button type="submit" class="button-gradiente button-gradiente-hover" (click)="onGoogleSubmit()">Login in with google</button>
+
+
+
+        <div class="container-register">
+            <p class="text-center">No estas registrada?
+                <a routerLink="/register">Registrate!</a>
+            </p>
         </div>
     </div>
-</div>
 
-<router-outlet></router-outlet>
+
+    <div class="col-12 text-center container-btn">
+        <button type="submit" class="button-gradiente button-gradiente-hover" (click)="onGoogleSubmit()">Login with
+            google</button>
+    </div>
+</div>

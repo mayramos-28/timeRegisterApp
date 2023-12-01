@@ -25,6 +25,7 @@ import { TableComponent } from './components/customsMaterial/table/table.compone
 import { DetailsModalComponent } from './components/customsMaterial/modals/details-modal/details-modal.component';
 import { DeleteModalComponent } from './components/customsMaterial/modals/delete-modal/delete-modal.component';
 import { UpdateModalComponent } from './components/customsMaterial/modals/update-modal/update-modal.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UpdateModalComponent } from './components/customsMaterial/modals/update
     TableComponent,
     DetailsModalComponent,
     DeleteModalComponent,
-    UpdateModalComponent
+    UpdateModalComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

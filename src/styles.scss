@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import './app/styles/colors.scss';
+@import './app/sass/colors';
+@import './app/sass/shadows';
+@import './app/sass/buttons';
+@import './app/sass/gradients';
 
-/* You can add global styles to this file, and also import other style files */
 * {
   margin: 0;
   padding: 0;
@@ -12,5 +14,28 @@ html, body{
     height: 100%;
     transition: all 0.5s ease-in-out;
 }
-html, body { height: 100%; }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.button-gradiente-hover,
+.button-gradiente {
+    background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
+    border: none;
+    border-radius: 8px;     
+    padding: 10px 20px;
+    color: white;  
+    cursor: pointer;   
+    text-align: center;   
+    text-decoration: none;
+ 
+}
+
+
+.button-gradiente-hover:hover {
+    background: linear-gradient(90deg, $bright-turquoise-500, $bright-turquoise-700);
+}
+
+.button-gradiente {
+    background: linear-gradient(90deg, $bright-turquoise-400, $bright-turquoise-600);
+}

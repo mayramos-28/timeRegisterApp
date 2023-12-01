@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ProjectsComponent implements OnInit {
   userId: string | null = null
   projects: Project[] | undefined
+  https: string | undefined;
 
 
   constructor(
@@ -30,6 +31,7 @@ export class ProjectsComponent implements OnInit {
       this.formProject.get('userId')?.setValue(userId || null);
 
     });
+    this.https = 'https://picsum.photos/400/300';
 
   }
 
@@ -51,7 +53,7 @@ export class ProjectsComponent implements OnInit {
     //convertir el id a string
     const idString = id.toString();
     const res = this._projectService.deleteProject(idString);
-   }
+  }
 
   getUser() {
     this.userService.getUserId().subscribe(userId => {

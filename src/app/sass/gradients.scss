@@ -1,0 +1,6 @@
+@use "./colors" as colors;
+
+ @mixin background-gradient {
+    background: linear-gradient(180deg,  colors.$gradient-light, colors.$gradient-dark);   
+}
+
