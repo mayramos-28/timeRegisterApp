@@ -26,8 +26,7 @@ export class RegisterComponent {
   }
   onSubmit() {
     this.userService.register(this.formRegister.value)
-    .then( response => {
-      console.log('response register ', response)
+    .then( response => {   
       this.router.navigate(['/login'])
     })
     .catch(error => console.log('error register ', error))

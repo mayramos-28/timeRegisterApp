@@ -22,12 +22,10 @@ export class TasksComponent implements OnInit {
     private _taskService: TasksService,
 
   ) { }
-  ngOnInit(): void {
-    console.log('idProject', this.idProject)
+  ngOnInit(): void {   
     if (this.idProject) {
       this.changeValue();
-      this._taskService.getTasks(this.idProject).subscribe(tasks => {
-        console.log('tasks', tasks);
+      this._taskService.getTasks(this.idProject).subscribe(tasks => { 
         this.tasks = tasks;
       });
     }

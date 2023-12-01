@@ -22,8 +22,6 @@ export class UpdateModalComponent implements OnInit {
     this.rows = this.data.rows;
     this.title = this.data.title;
     this.getValuesToChange();
-    console.log('this.data', this.information);
-    console.log('this.rows', this.rows);
   }
 
   close() {

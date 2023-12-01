@@ -24,17 +24,13 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this._projectService.getProjects().subscribe(projects => {
-      console.log('projects', projects);
       this.projects = projects;
     });
     this.userService.getUserId().subscribe(userId => {
       this.formProject.get('userId')?.setValue(userId || null);
-
     });
     this.https = 'https://picsum.photos/400/300';
-
   }
-
 
   formProject: FormGroup = this._formBuilder.group({
     name: [''],
@@ -49,16 +45,11 @@ export class ProjectsComponent implements OnInit {
     this.formProject.reset();
   }
 
-  async delete(id: any) {
-    //convertir el id a string
-    const idString = id.toString();
-    const res = this._projectService.deleteProject(idString);
-  }
+
 
   getUser() {
     this.userService.getUserId().subscribe(userId => {
-      this.userId = userId || null;
-      console.log('userId 1', this.userId);
+      this.userId = userId || null;    
     });
   }
 

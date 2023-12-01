@@ -69,7 +69,6 @@ export class TableComponent implements OnInit {
     public dialog: MatDialog
   ) { }
   ngOnInit(): void {
-    console.log(this.data, 'data')
     this.dataSource = this.data;
     this.columnProps = this.displayedColumns.map(column => column.prop);
   }
@@ -80,7 +79,6 @@ export class TableComponent implements OnInit {
   }
 
   handleEdit(element: any) {
-    console.log(element)
     this.dialog.open(DetailsModalComponent, {
       width: '700px',
       height: '450px',

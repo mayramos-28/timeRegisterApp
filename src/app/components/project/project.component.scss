@@ -1,0 +1,53 @@
+@use "./../../sass/colors.scss" as colors;
+@use "./../../sass/gradients.scss" as gradients;
+@use "./../../sass/shadows.scss" as shadows;
+
+.card-header-project {
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.card-header {
+    background-color: colors.$bright-turquoise-600;
+    color: colors.$bright-turquoise-50;
+    width: 100%;
+
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    .card-title {
+        padding: 10px;
+    }
+
+}
+
+.btn-options {
+    border: none;
+    background-color: transparent;
+    size: 2rem;
+}
+
+.btn-options::after {
+    display: none !important;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: .5rem;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    /* O ajusta según sea necesario */
+}

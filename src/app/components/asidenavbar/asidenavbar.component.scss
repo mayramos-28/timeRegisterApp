@@ -9,7 +9,7 @@
 .sidebar-large {
     height: 100vh;
     color: colors.$bright-turquoise-100 ;
-    @include gradients.background-gradient;
+    background-color: colors.$bright-turquoise-600;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 

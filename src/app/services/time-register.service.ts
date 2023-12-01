@@ -32,12 +32,8 @@ export class TimeRegisterService {
     const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);
     return deleteDoc(timeRegisterDocRef);
   }
-  // updateTimeRegister(id: string, timeRegister: TimeRegister){
-   
-  //   const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);
-    
-  //   return  updateDoc(timeRegisterDocRef, {timeRegister});
-  // }
+  
+
   updateTimeRegister(id: string, timeRegister: TimeRegister){
    
     const timeRegisterDocRef = doc(this.firestore, `timeRegister/${id}`);

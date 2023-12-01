@@ -132,7 +132,6 @@ export class TimeRegisterComponent implements OnInit {
 
   getDetails(id: any) {
     const data = this.allTimesRegisters.find(timeRegister => timeRegister.id === id);
-    console.log(data, 'data')
     this.dialog.open(DetailsModalComponent, {
       width: '600px',
       height: '300px',

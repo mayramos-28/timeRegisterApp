@@ -17,8 +17,7 @@ export class AsidenavbarComponent {
     this.IsLogged();
   }
 
-  logout (){
-    console.log(` logging out`);
+  logout (){   
     this.userService.logout()
     .then(() => {
       localStorage.removeItem('user');
@@ -28,9 +27,7 @@ export class AsidenavbarComponent {
   }
   IsLogged(){
     this.userService.isUserLogged().subscribe((user) => {
-      console.log('user de isLogged', user)
-     this.isLoggin = user;
-     console.log('isLoggin', this.isLoggin)
+     this.isLoggin = user;  
     });
   }
 }

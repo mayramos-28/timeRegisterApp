@@ -35,16 +35,15 @@ export class ProjectsService {
     const projectsRef = collection(this.firestore, 'projects');
     const userProjectsQuery = query(projectsRef, where('userId', '==', user.uid));
     return collectionData(userProjectsQuery, { idField: 'id' }) as Observable<Project[]>;
-    // return collectionData(projectsRef, { idField: 'id' }) as Observable<Project[]>;
+   
   }
-  deleteProject(id: string) {
+  deleteProject(id: string) {   
     const projectDocRef = doc(this.firestore, `projects/${id}`);
     return deleteDoc(projectDocRef);
-
   }
-  getProject(id: string) {
-    const projectDocRef = doc(this.firestore, `projects/${id}`);
 
+   getProject(id: string) {
+    const projectDocRef = doc(this.firestore, `projects/${id}`);
     return getDoc(projectDocRef);
   }
   updateProject(id: string, project: Project) {

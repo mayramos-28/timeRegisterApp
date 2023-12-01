@@ -18,8 +18,6 @@ export class DetailsModalComponent {
     this.information = this.data.information;
     this.rows = this.data.rows;
     this.title = this.data.title;
-    console.log('this.data', this.information);
-    console.log('this.rows', this.rows);
   }
 
   close() {
